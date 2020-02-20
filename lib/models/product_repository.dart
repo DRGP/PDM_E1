@@ -1,3 +1,4 @@
+import 'package:practica_integradora_uno/models/product_cup.dart';
 import 'package:practica_integradora_uno/models/product_drinks.dart';
 import 'package:practica_integradora_uno/models/product_grains.dart';
 
@@ -6,10 +7,30 @@ enum ProductType { BEBIDAS, GRANO, TAZAS }
 class ProductRepository {
   static List<dynamic> loadProducts(ProductType prodType) {
     // ----------------------       Tazas      ----------------------------//
-    //if (prodType == ProductType.TAZAS) {
-    // TODO: Agregar al menos 5 productos "cup/taza"
-    //}
-
+    if (prodType == ProductType.TAZAS)
+      return <ProductCup>[
+        ProductCup(
+          productTitle: 'Chip cup',
+          productImage: 'https://prodimage.images-bn.com/pimages/0733966098988_p0_v1_s550x406.jpg',
+          productDescription: '1991 animated film Beauty and the Beast: Chip cup',
+          productColor: ProductColor.WHITE,
+          productAmount: 0
+        ),
+        ProductCup(
+          productTitle: 'Flounder cup',
+          productImage: 'https://static-buyma-jp.akamaized.net/imgdata/item/180730/0037497861/155701013/428.jpg',
+          productDescription: '1989 animated film The Little Mermaid: Flounder cup',
+          productColor: ProductColor.WHITE,
+          productAmount: 0
+        ),
+        ProductCup(
+          productTitle: 'Dumbo cup',
+          productImage: 'https://images-na.ssl-images-amazon.com/images/I/61716o0a02L._AC_SL1500_.jpg',
+          productDescription: '1941 animated film Dumbo: Dumbo cup',
+          productColor: ProductColor.WHITE,
+          productAmount: 0
+        ),
+      ];
     // ----------------------       Grano      ----------------------------//
     if (prodType == ProductType.GRANO)
       return <ProductGrains>[

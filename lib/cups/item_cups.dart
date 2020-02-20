@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:practica_integradora_uno/colors.dart';
-import 'package:practica_integradora_uno/models/product_drinks.dart';
+import 'package:practica_integradora_uno/models/product_cup.dart';
 
-class ItemDrinks extends StatefulWidget {
-  final ProductDrinks drink;
+class ItemCups extends StatefulWidget {
+  final ProductCup cup;
   final ValueChanged<int> onToggle;
   final int itemIndex;
-  ItemDrinks({
+  ItemCups({
     Key key,
-    @required this.drink,
+    @required this.cup,
     @required this.onToggle,
     @required this.itemIndex,
   }) : super(key: key);
 
   @override
-  _ItemDrinksState createState() => _ItemDrinksState();
+  _ItemCupsState createState() => _ItemCupsState();
 }
 
-class _ItemDrinksState extends State<ItemDrinks> {
+class _ItemCupsState extends State<ItemCups> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +31,7 @@ class _ItemDrinksState extends State<ItemDrinks> {
             Expanded(
               child: Container(
                 child: Text(
-                  "${widget.drink.productTitle} \n Precio: ${widget.drink.productPrice}",
+                  "${widget.cup.productTitle} \n Precio: ${widget.cup.productPrice}",
                   style: Theme.of(context)
                       .textTheme
                       .title
@@ -48,7 +48,7 @@ class _ItemDrinksState extends State<ItemDrinks> {
                   bottomRight: Radius.circular(5.0),
                 ),
                 child: Image.network(
-                  "${widget.drink.productImage}",
+                  "${widget.cup.productImage}",
                   fit: BoxFit.fitHeight,
                   height: 180,
                 ),
@@ -57,7 +57,7 @@ class _ItemDrinksState extends State<ItemDrinks> {
             ),
             IconButton(
                 icon: Icon(Icons.favorite),
-                color: widget.drink.liked ? cuppingSolidBlue : cuppingLightGray,
+                color: widget.cup.liked ? cuppingSolidBlue : cuppingLightGray,
                 onPressed: () {
                   setState(() {
                     widget.onToggle(widget.itemIndex);

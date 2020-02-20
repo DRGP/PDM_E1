@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:practica_integradora_uno/colors.dart';
-import 'package:practica_integradora_uno/models/product_drinks.dart';
+import 'package:practica_integradora_uno/models/product_grains.dart';
 
-class ItemDrinks extends StatefulWidget {
-  final ProductDrinks drink;
+class ItemGrains extends StatefulWidget {
+  final ProductGrains grain;
   final ValueChanged<int> onToggle;
   final int itemIndex;
-  ItemDrinks({
+  ItemGrains({
     Key key,
-    @required this.drink,
+    @required this.grain,
     @required this.onToggle,
     @required this.itemIndex,
   }) : super(key: key);
 
   @override
-  _ItemDrinksState createState() => _ItemDrinksState();
+  _ItemGrainsState createState() => _ItemGrainsState();
 }
 
-class _ItemDrinksState extends State<ItemDrinks> {
+class _ItemGrainsState extends State<ItemGrains> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +31,7 @@ class _ItemDrinksState extends State<ItemDrinks> {
             Expanded(
               child: Container(
                 child: Text(
-                  "${widget.drink.productTitle} \n Precio: ${widget.drink.productPrice}",
+                  "${widget.grain.productTitle} \n Precio: ${widget.grain.productPrice}",
                   style: Theme.of(context)
                       .textTheme
                       .title
@@ -48,7 +48,7 @@ class _ItemDrinksState extends State<ItemDrinks> {
                   bottomRight: Radius.circular(5.0),
                 ),
                 child: Image.network(
-                  "${widget.drink.productImage}",
+                  "${widget.grain.productImage}",
                   fit: BoxFit.fitHeight,
                   height: 180,
                 ),
@@ -57,7 +57,7 @@ class _ItemDrinksState extends State<ItemDrinks> {
             ),
             IconButton(
                 icon: Icon(Icons.favorite),
-                color: widget.drink.liked ? cuppingSolidBlue : cuppingLightGray,
+                color: widget.grain.liked ? cuppingSolidBlue : cuppingLightGray,
                 onPressed: () {
                   setState(() {
                     widget.onToggle(widget.itemIndex);

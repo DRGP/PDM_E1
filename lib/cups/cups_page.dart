@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:practica_integradora_uno/drinks/item_drinks.dart';
-import 'package:practica_integradora_uno/drinks/item_drinks_details.dart';
+import 'package:practica_integradora_uno/cups/item_cups.dart';
+import 'package:practica_integradora_uno/cups/item_cups_details.dart';
 
-class DrinksPage extends StatelessWidget {
+class CupsPage extends StatelessWidget {
   //final List<ProductDrinks> drinksList;
   final Map productMap;
-  DrinksPage({
+  CupsPage({
     Key key,
     @required this.productMap,
   }) : super(key: key);
@@ -19,24 +19,24 @@ class DrinksPage extends StatelessWidget {
             Navigator.of(context).pop(this.productMap);
           },
         ),
-        title: Text("Bebidas"),
+        title: Text("Tazas"),
       ),
       body: ListView.builder(
-        itemCount: productMap['drinks'].length,
+        itemCount: productMap['cups'].length,
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (_) => ItemDrinksDetails(
-                    drink: productMap['drinks'][index],
+                  builder: (_) => ItemCupsDetails(
+                    cup: productMap['cups'][index],
                     productMap: this.productMap,
                   ),
                 ),
               );
             },
-            child: ItemDrinks(
-              drink: productMap['drinks'][index],
+            child: ItemCups(
+              cup: productMap['cups'][index],
               onToggle: toggleFavorite,
               itemIndex: index,
             ),
@@ -47,6 +47,6 @@ class DrinksPage extends StatelessWidget {
   }
 
   void toggleFavorite(int i) {
-    this.productMap['drinks'][i].liked = !this.productMap['drinks'][i].liked;
+    this.productMap['cups'][i].liked = !this.productMap['cups'][i].liked;
   }
 }

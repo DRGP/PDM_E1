@@ -13,6 +13,11 @@ const String PROFILE_NAME = "Anna Doe";
 const String PROFILE_EMAIL = "anna@doe.com";
 const String PROFILE_PICTURE =
     "https://dkpp.go.id/wp-content/uploads/2018/10/photo.jpg";
-
+// login
+const String LANDING_TITLE = "Landing";
+const String REGISTRATION_TITLE = "Registration";
+const String LOGIN_TITLE = "Login";
+// drinks
+const String DRINKS_PAGE_TITLE = "Bebidas";
 // app
 const Color PRIMARY_COLOR = Colors.blue;

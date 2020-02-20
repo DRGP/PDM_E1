@@ -10,7 +10,7 @@ class ProductDrinks {
   ProductSize productSize; // tamano del producto
   double productPrice; // precio del producto autocalculado
   final int productAmount; // cantidad de producto por comprar
-  final bool liked;
+  bool liked;
 
   ProductDrinks({
     @required this.productTitle,
@@ -41,11 +41,11 @@ class ProductDrinks {
   //
   double productPriceCalculator() {
     if (this.productSize == ProductSize.CH)
-      return (20 + Random().nextInt(40)).toDouble();
+      return (20 + Random().nextInt(20)).toDouble();
     if (this.productSize == ProductSize.M)
-      return (40 + Random().nextInt(60)).toDouble();
+      return (40 + Random().nextInt(20)).toDouble();
     if (this.productSize == ProductSize.G)
-      return (60 + Random().nextInt(80)).toDouble();
+      return (60 + Random().nextInt(20)).toDouble();
     return 999.0;
   }
 }
