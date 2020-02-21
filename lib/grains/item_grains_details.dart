@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practica_integradora_uno/colors.dart';
 import 'package:practica_integradora_uno/models/product.dart';
 import 'package:practica_integradora_uno/models/product_grains.dart';
 
@@ -25,7 +26,51 @@ class _ItemGrainsDetailsState extends State<ItemGrainsDetails> {
       body: Column(
         children: <Widget>[
           Image.network(widget.grain.productImage),
+          SizedBox(
+            height: 15,
+          ),
           Text(widget.grain.productDescription),
+          ButtonBar(
+            alignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    widget.grain.productWeight = ProductWeight.CUARTO;
+                    widget.grain.productPrice =
+                        widget.grain.productPriceCalculator();
+                  });
+                },
+                child: Text('.25 KG'),
+                color: widget.grain.productWeight == ProductWeight.CUARTO
+                    ? cuppingSolidOrange
+                    : cuppingLightGray,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    widget.grain.productWeight = ProductWeight.KILO;
+                    widget.grain.productPrice =
+                        widget.grain.productPriceCalculator();
+                  });
+                },
+                child: Text('1 KG'),
+                color: widget.grain.productWeight == ProductWeight.KILO
+                    ? cuppingSolidOrange
+                    : cuppingLightGray,
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 0, 40, 0),
+            child: Container(
+              alignment: Alignment.centerRight,
+              child: Text(
+                '\$ ${widget.grain.productPrice}',
+                textAlign: TextAlign.right,
+              ),
+            ),
+          ),
           ButtonBar(
             children: <Widget>[
               FlatButton(onPressed: () {

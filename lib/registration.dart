@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practica_integradora_uno/login.dart';
 import 'package:practica_integradora_uno/utils/constants.dart';
 import 'package:practica_integradora_uno/colors.dart';
 
@@ -76,12 +77,24 @@ class _RegistrationState extends State<Registration> {
                     ],
                   ),
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Login(),
+                        ),
+                      );
+                    },
                     child: Text('REGISTRATE'),
                   ),
                   Text('¿Ya tienes una cuenta?'),
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Login(),
+                        ),
+                      );
+                    },
                     child: Text('INGRESA'),
                   ),
                 ],

@@ -28,7 +28,7 @@ class ProductGrains {
     if (this.productWeight == ProductWeight.CUARTO)
       return (20 + Random().nextInt(40)).toDouble();
     if (this.productWeight == ProductWeight.KILO)
-      return (40 + Random().nextInt(60)).toDouble();
+      return (80 + Random().nextInt(60)).toDouble();
     return 9999.0;
   }
 }

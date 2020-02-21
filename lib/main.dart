@@ -38,5 +38,6 @@ ThemeData _buildCuppingTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
     primaryColor: cuppingSolidBlue,
+    buttonColor: cuppingSolidOrange,
   );
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practica_integradora_uno/colors.dart';
 import 'package:practica_integradora_uno/models/product.dart';
 import 'package:practica_integradora_uno/models/product_drinks.dart';
 
@@ -22,7 +23,64 @@ class _ItemDrinksDetailsState extends State<ItemDrinksDetails> {
       body: Column(
         children: <Widget>[
           Image.network(widget.drink.productImage),
+          SizedBox(
+            height: 15,
+          ),
           Text(widget.drink.productDescription),
+          ButtonBar(
+            alignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    widget.drink.productSize = ProductSize.CH;
+                    widget.drink.productPrice =
+                        widget.drink.productPriceCalculator();
+                  });
+                },
+                child: Text('CH'),
+                color: widget.drink.productSize == ProductSize.CH
+                    ? cuppingSolidOrange
+                    : cuppingLightGray,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    widget.drink.productSize = ProductSize.M;
+                    widget.drink.productPrice =
+                        widget.drink.productPriceCalculator();
+                  });
+                },
+                child: Text('M'),
+                color: widget.drink.productSize == ProductSize.M
+                    ? cuppingSolidOrange
+                    : cuppingLightGray,
+              ),
+              RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    widget.drink.productSize = ProductSize.G;
+                    widget.drink.productPrice =
+                        widget.drink.productPriceCalculator();
+                  });
+                },
+                child: Text('G'),
+                color: widget.drink.productSize == ProductSize.G
+                    ? cuppingSolidOrange
+                    : cuppingLightGray,
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 0, 40, 0),
+            child: Container(
+              alignment: Alignment.centerRight,
+              child: Text(
+                '\$ ${widget.drink.productPrice}',
+                textAlign: TextAlign.right,
+              ),
+            ),
+          ),
           ButtonBar(
             children: <Widget>[
               FlatButton(

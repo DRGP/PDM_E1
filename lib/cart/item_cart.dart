@@ -26,7 +26,7 @@ class _ItemDrinksState extends State<ItemCart> {
             Expanded(
               child: Container(
                 child: Text(
-                  "${widget.product.title} \n Precio: ${widget.product.price} \n Cantidad: ${widget.product.amount} \n Total: ${widget.product.price * widget.product.amount}",
+                  "${widget.product.title} \n ${widget.product.details} \n Precio: ${widget.product.price} \n Cantidad: ${widget.product.amount} \n Total: ${widget.product.price * widget.product.amount}",
                   style: Theme.of(context)
                       .textTheme
                       .title

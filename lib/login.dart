@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practica_integradora_uno/home/home.dart';
+import 'package:practica_integradora_uno/registration.dart';
 import 'package:practica_integradora_uno/utils/constants.dart';
 import 'package:practica_integradora_uno/colors.dart';
 
@@ -68,7 +69,13 @@ class Login extends StatelessWidget {
                   Text('¿Olvidaste tu pasword?'),
                   Text('¿Aún no tienes una cuenta?'),
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => Registration(),
+                        ),
+                      );
+                    },
                     child: Text('REGÍSTRATE'),
                   ),
                 ],
